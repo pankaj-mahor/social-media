@@ -1,0 +1,53 @@
+body {
+    font-family: sans-serif;
+
+}
+
+.App {
+    max-width: 60rem;
+    margin: 0 auto;
+}
+
+a {
+    font-weight: 600;
+    text-decoration: none;
+    margin: 0.5rem;
+
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    background: rgb(252, 169, 169);
+    padding: 0.8rem 1rem;
+}
+
+.navbar>div:last-of-type {
+    display: flex;
+    align-items: center;
+}
+
+.form-add {
+    max-width: 35rem;
+    margin: 2rem auto;
+}
+
+.form-add form {
+    background: #f6f6f6;
+    border-radius: 20px;
+    padding: 2rem;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 0.5rem 0.5rem;
+    outline: none;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input[type="submit"] {
+    cursor: pointer;
+
+}
