@@ -1,8 +1,10 @@
 import React , { useState , useEffect }  from 'react'
 import { getDocs , collection } from 'firebase/firestore'
-import { db } from '../config/firebase'
+import { db } from '../../config/firebase'
+import Post from './Post'
 
 const Main = () => {
+    const [isloaded, setLoaded] = useState(false)
 
   const [postList , setPostList]  = useState([])
   const postRef = collection(db, "posts");
@@ -18,29 +20,25 @@ const Main = () => {
 
   useEffect(() => {
 
-      // getPosts()
-
-    let flag = true
-    console.log('effect start')
-    if (flag === true) {
       getPosts()
-    }
-    return () => {
-      flag = false
-      console.log('effect clean')
 
-    }
+    // let flag = true/
+    // console.log('effect start')
+    // if (!isloaded) {
+    //   getPosts()
+    // }
+    // return () => {
+    //   setLoaded(true)
+    //   console.log('effect clean')
+
+    // }
   }, [])
   
   
   return (
     <div className='homepage'>{
-      postList?.map((post) => (
-        <div className='post'>
-
-          <p>{post.title}</p>  
-          <p className='desc-post'>{ post.title}</p>
-        </div>
+      postList?.map((post , index) => (
+        <Post key={index} post={ post} />
     ))
     
     }</div>
